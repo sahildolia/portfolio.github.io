@@ -1,0 +1,296 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	background: #e9e9e9;
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-size: 40px;
+  text-align: center;
+}
+
+.container{
+	cursor: pointer;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	width: 30px;
+	height: 20px;
+}
+
+.bars{
+	width: 30px;
+	height: 4px;
+	background: #ff651c;
+}
+
+.bars::before,
+.bars::after{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 4px;
+	background: #ff651c;
+}
+
+.bars::before{
+	margin-top: 9px;
+}
+
+.bars::after{
+	margin-top: 18px;
+}
+
+nav{
+	position: absolute;
+	width: 100%;
+	height: 0px;
+	background: #ff651c;
+	display: flex;
+    z-index: 1;
+	justify-content: center;
+	align-items: center;
+	overflow-x: hidden;
+	right: -100vw;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li{
+	margin: 50px 0;
+}
+
+nav ul li a{
+	color: #fafafa;
+	font-size: 2em;
+	text-decoration: none;
+	font-weight: 500;
+	position: relative;
+	opacity: 0;
+	pointer-events: none;
+}
+
+nav ul li a:after{
+	content: '';
+	width: 100%;
+	position: absolute;
+	height: 3px;
+	border-radius: 5px;
+	background: #fff;
+	bottom: -10px;
+	left: 0;
+	transform-origin: left;
+	transition: transform .5s ease;
+	transform: scaleX(0);
+}
+
+
+nav ul li a:hover:after{
+	transform: scaleX(1);
+}
+
+nav .close {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: 6%;
+	right: 5%;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+}
+
+nav h2{
+	position: absolute;
+	top:5%;
+	left: 5%;
+	opacity: 0;
+	pointer-events: none;
+	color: #fff;
+	font-size: 2em;
+}
+
+nav .close div::before,
+nav .close div::after{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 4px;
+	background: #fff;
+	transition: background .5s ease;
+}
+nav .close div::before{
+	transform: rotate(-45deg);
+}
+
+nav .close div::after{
+	transform: rotate(45deg);
+}
+
+nav .close:hover div::before,
+nav .close:hover div::after{
+	background: rgb(209, 3, 3);
+}
+main{
+    height: 100vh;
+    width: 100%;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .hidden{
+	opacity: 0;
+}
+main .home{
+    height: 80vh;
+	padding: 30px30px;
+    width: 80%;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+	overflow: hidden;
+    background-color: #212121;
+}
+.home .pic{
+    height: 90%;
+    width: 40%;
+    background-color: #ff651c;
+    border-radius: 12px;
+    margin: 16px;
+}
+.pic img{
+    width: 100%;
+    border-radius: 12px;
+    height: 100%;
+}
+.details{
+    height: 90%;
+    width: 60%;
+  margin: 26px 12px 26px;
+  padding: 16px;
+}
+.details p{
+    color: #888;
+    text-align: center;
+}
+.details h1{
+    color: #fff;
+}
+.typewriter {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    color: #111;
+    font-weight: bold;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+	z-index: auto;
+}
+
+.typewriter span {
+    color: #ff651c;
+    text-transform: uppercase;
+    padding: 10px;
+    border-right: solid var(--text-color) 10px; 
+    animation: cursor 1s ease-in-out infinite;
+}
+.details .icons{
+    text-align: center;
+}
+.icons .fa-brands{
+    color: #888;
+    font-size: 26px;
+	padding: 4px;
+    margin: 6px;
+}
+.details .btn {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.details .btn a{
+	color: #fff;
+	text-decoration: none;
+	border: 1px solid #ff651c;
+	padding: 12px 16px;
+	margin: 12px;
+	border-radius: 6px;
+	background-color: #ff651c;
+}
+.details .btn a:hover{
+	background-color: transparent;
+	transition: ease 0.40s;
+}
+
+@keyframes cursor {
+    from { border-color: var(--text-color); }
+    to { border-color: transparent; }
+}
+
+@media (max-width: 576px) {
+    .typewriter { font-size: 24px; }
+}
+@media (max-width: 768px) {
+    .typewriter { font-size: 36px; }
+}
+@media (max-width: 992px){
+  h1{
+    font-size: 25px;
+  }
+}
+@media only screen and (max-width: 600px) {
+	body{
+		overflow: hidden;
+	}
+	main{
+		height: 100vh;
+	}
+	.container{
+		z-index: 1;
+	}
+	.details{
+		width: 100%;
+	}
+	.details p{
+		padding: 12px;
+	}
+
+	main .home{
+		overflow-y: scroll;
+		width: 90%;
+		height: 90vh;
+		display: flex;
+		flex-direction: column;
+		
+	}
+	.home .pic{
+		width: 68%;
+	}
+	.home .details{
+		padding: 0;
+		margin: 0px;
+	}
+	.typewriter{
+		font-size: 20px;
+	}
+	.icons .fa-brands{
+		padding: 0px;
+	}
+	.details .btn a{
+		padding:6px 7px;
+	}
+  }

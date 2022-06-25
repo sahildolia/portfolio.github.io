@@ -1,0 +1,6 @@
+gsap.from('.home', { duration: 1, y: '-100%', opacity:0})
+gsap.from('.pic', { duration: 1, x: '-100%', delay: 1.1, ease: 'back', opacity:0})
+gsap.from('.a1', { duration: 1,delay: 1.6, x: '100%', opacity:0})
+gsap.from('.text', {duration: 1, opacity: 0, delay:2.6})
+gsap.from('.ltr', {duration: 1, x: '-100%', opacity:0, delay: 3})
+gsap.from('.rtl', {duration: 1, x: '100%', opacity:0, delay: 3})
